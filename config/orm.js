@@ -12,11 +12,12 @@ let orm = {
         })
     },
 
-    insert: function(table, insertValue, cb){
+    insert: function(table, col1, col2, insertValue1, insertValue2, cb){
                 //set up the query
-                let queryString = 'INSERT INTO ?? VALUES ??'
+                console.log(insertValue1);
+                let queryString = `INSERT INTO ?? (${col1},${col2}) VALUES ('${insertValue1.toString()}',${insertValue2})`
                 //make query using agruments and queryString
-                connection.query(queryString, [table, insertValue], function(err ,data){
+                connection.query(queryString, [table], function(err ,data){
                     if(err) throw err;
 
                     cb(data);

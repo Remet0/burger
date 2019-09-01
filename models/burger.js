@@ -7,8 +7,12 @@ let burger = {
         })
     },
 
-    insert: function(){
-        
+    insert: function(name, cb){
+        orm.insert('burgers', 'burger_name', 'devoured', name, false, cb)
+    },
+    update: function(colID, cb){
+        id = 'id=' + colID;
+        orm.update('burgers', 'devoured', true, id, cb)
     }
 }
 
