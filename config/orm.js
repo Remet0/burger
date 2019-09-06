@@ -19,14 +19,12 @@ let orm = {
                 //make query using agruments and queryString
                 connection.query(queryString, [table], function(err ,data){
                     if(err) throw err;
-
                     cb(data);
                 })
     },
     update: function(table, colName, updateValue, colID, cb){
-        let queryString = 'UPDATE ?? SET ?? = ?? WHERE ??'
-
-        connection.query(queryString, [table, colName, updateValue, colID], function(err, data){
+        let queryString = `UPDATE ${table} SET ${colName} = ${updateValue} WHERE ${colID}`;
+        connection.query(queryString, function(err, data){
             cb(data);
         })
     }

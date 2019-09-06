@@ -1,0 +1,20 @@
+body{
+    background-color: lightcoral;
+}
+.burger_border{
+    background-color: white;
+    border: solid red 2px;
+    margin-bottom: 20px;
+}
+.form_border{
+    border: solid red 2px;
+}
+.form_button{
+    background-color: red;
+    margin-top: 5px;
+    border: lightcoral solid 2px;
+}
+.eat_button{
+    background-color: lightcoral;
+    border: red solid 2px;
+}
