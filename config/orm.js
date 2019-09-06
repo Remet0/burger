@@ -22,6 +22,7 @@ let orm = {
                     cb(data);
                 })
     },
+
     update: function(table, colName, updateValue, colID, cb){
         let queryString = `UPDATE ${table} SET ${colName} = ${updateValue} WHERE ${colID}`;
         connection.query(queryString, function(err, data){
